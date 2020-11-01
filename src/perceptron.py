@@ -1,5 +1,3 @@
-from random import random
-
 import numpy as np
 
 from utils import Activation
@@ -17,7 +15,7 @@ class Perceptron:
     def __init__(self, learning_rate: float, X: np.array, label: np.array,
                  func: str):
         self.__learning_rate = learning_rate
-        self.__w = 2 * np.random.randon(size=X.shape[-1]) - 1
+        self.__w = 2 * np.random.random(size=X.shape[-1]) - 1
         # [2 * random() - 1 for i in range(X.shape[-1])]
         self.__bias = 2 * np.random.random() - 1
         self.__data = X
