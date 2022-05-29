@@ -5,6 +5,7 @@ class Activation:
     def __init__(self, func):
         self._methods = [
             fu[13:] for fu in dir(self)
+
             if callable(getattr(self, fu)) and fu.startswith("_Activation__")
         ]
 
@@ -27,8 +28,8 @@ class Activation:
 
     def set_activation_func(self, func):
         if func not in self._methods:
-            print("The {0} function is not implemented!\nThere are {1}, " +
-                  "which are: {2}".format(func, len(self._methods),
-                                          self._methods))
+            print(f'The {func} function is not implemented!'
+                  f'\nThere are {len(self._methods)}, '
+                  f'which are: {self._methods}')
         else:
             self._activation_func = '_Activation__' + func
